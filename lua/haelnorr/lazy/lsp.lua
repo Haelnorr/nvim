@@ -33,7 +33,6 @@ return {
                 "css_variables",
                 "cssls",
                 "cssmodules_ls",
-                "custom_elements_ls",
                 "docker_compose_language_service",
                 "dockerls",
                 "html",
