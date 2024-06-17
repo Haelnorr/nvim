@@ -98,6 +98,9 @@ return {
                 header = "",
                 prefix = "",
             },
+            virtual_text = {
+                prefix = "●",
+            },
         })
     end
 }
