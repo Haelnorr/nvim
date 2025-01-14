@@ -39,7 +39,6 @@ return {
                 "jsonls",
                 "pyright",
                 "tailwindcss",
-                "tsserver",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
