@@ -182,6 +182,8 @@ e.g. in Python:
 # NOTE: this is a clever use of an example :)
 # TEST: just making sure
 ```
+![Tue Jan 21 08:37:48 PM AEDT 2025](https://github.com/user-attachments/assets/8d776498-e9f2-44ad-a908-94f8f1546009)
+
 
 `:TodoTelescope` - search project todos with Telescope  
 
