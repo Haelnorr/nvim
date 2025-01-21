@@ -8,7 +8,7 @@ local HaelnorrGroup = augroup('Haelnorr', {})
 local autocmd = vim.api.nvim_create_autocmd
 
 function R(name)
-	require("plenary.reload").reload_module(name)
+    require("plenary.reload").reload_module(name)
 end
 
 autocmd('LspAttach', {

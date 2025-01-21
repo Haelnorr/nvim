@@ -1,5 +1,5 @@
 return {
-    'feline-nvim/feline.nvim',
+    'freddiehaddad/feline.nvim',
     config = function ()
         local ctp_feline = require('catppuccin.groups.integrations.feline')
 

@@ -16,15 +16,24 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- yanks to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- pretty sure this deletes without replacing buffer but idk
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+-- deletes without replacing buffer
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- idk something with tmux, ill come back to this
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- formats file using LSP
+-- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("", "<leader>f", function()
+    require("conform").format({ async = true }, function(err)
+        if not err then
+            local mode = vim.api.nvim_get_mode().mode
+            if vim.startswith(string.lower(mode), "v") then
+                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+            end
+        end
+    end)
+end, { desc = "Format code" })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -43,4 +52,3 @@ vim.keymap.set("n", "<C-Q>", function()
         vim.opt.colorcolumn = ""
     end
 end)
-

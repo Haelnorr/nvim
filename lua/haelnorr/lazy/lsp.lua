@@ -27,8 +27,6 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "ansiblels",
-                "astro",
                 "bashls",
                 "css_variables",
                 "cssls",
@@ -38,7 +36,6 @@ return {
                 "html",
                 "jsonls",
                 "pyright",
-                "tailwindcss",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
