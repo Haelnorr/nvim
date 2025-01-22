@@ -21,6 +21,7 @@ Plugins are managed using [lazy.nvim](https://github.com/folke/lazy.nvim)
  - [Harpoon](#harpoon)
  - [Markdown Preview](#markdown-preview)
  - [NVIM Web Devicons](#nvim-web-devicons)
+ - [Oil](#oil)
  - [SUDA](#suda)
  - [Surround](#surround)
  - [Telescope](#telescope)
@@ -115,6 +116,10 @@ Live preview of markdown files in browser, with synced scrolling
 ---
 #### [NVIM Web Devicons](https://github.com/nvim-tree/nvim-web-devicons)
 Provides Nerd font icons for other plugins to use
+
+---
+#### [Oil](https://github.com/nvim-tree/nvim-web-devicons)
+Edit/view your filesystem like a normal NeoVim buffer
 
 ---
 #### [SUDA](https://github.com/lambdalisue/vim-suda)
@@ -271,7 +276,7 @@ LSP has been setup with the following dependencies:
 
 | Keybind | Behaviour | Normal | Visual | Select |
 |---------|-----------|--------|--------|--------|
-| `<leader>pv` | View directory of current file | &check; | &cross; | &cross; |
+| `-` | View parent directory (works in file and in Oil filetree viewer) | &check; | &cross; | &cross; |
 | `J` | Move selection down and autoindent | &cross; | &check; | &check; |
 | `K` | Move selection up and autoindent | &cross; | &check; | &check; |
 | `J` | Moves line below current line into sameline | &check; | &cross; | &cross; |
