@@ -78,6 +78,7 @@ Git integration
 |`<leader>gs` | Opens fugitive window | Normal |
 | `gu` | `<cmd>diffget //2<CR>` | Normal |
 | `gh` | `<cmd>diffget //3<CR>` | Normal |
+| `a` | Stage highlighted file |  (inside fugitive) |
 | `<leader>s` | `:Git add -A` | (inside fugitive) |
 | `<leader>c` | `:Git commit` | (inside fugitive) |
 | `<leader>p` | `:Git push` | (inside fugitive) |
