@@ -118,7 +118,7 @@ Live preview of markdown files in browser, with synced scrolling
 Provides Nerd font icons for other plugins to use
 
 ---
-#### [Oil](https://github.com/nvim-tree/nvim-web-devicons)
+#### [Oil](https://github.com/stevearc/oil.nvim)
 Edit/view your filesystem like a normal NeoVim buffer
 
 ---
