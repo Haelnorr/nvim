@@ -12,11 +12,10 @@ return {
 				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
 			end,
 			layout = {
-				default_direction = "prefer_left",
-				min_width = 30,
+				max_width = { 40, 0.3 },
 				width = nil,
-				max_width = { 40, 0.2 },
-				preserve_equality = true,
+				min_width = 10,
+				default_direction = "prefer_left",
 			},
 			filter_kind = {
 				"Class",

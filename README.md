@@ -31,7 +31,7 @@ Plugins are managed using [lazy.nvim](https://github.com/folke/lazy.nvim)
  - [Trouble](#trouble)
  - [Undotree](#undotree)
  - [Vim be good](#vim-be-good)
- - [Windows](#windows)
+ - [Vim Dadbod UI](#vim-dadbod-ui)
 
 ---
 #### [Aerial](https://github.com/stevearc/aerial.nvim)
@@ -217,13 +217,17 @@ Undotree for NeoVim
 ---
 #### [Vim be good](https://github.com/ThePrimeagen/vim-be-good)
 Games for praciticing Vim motions  
-
 **Usage:**  
 `:VimBeGood`
 
 ---
-#### [Windows](https://github.com/anuvyklack/windows.nvim)
-Automatically minimise and maximise windows when focused
+#### [Vim Dadbod UI](https://github.com/kristijanhusak/vim-dadbod-ui)
+Simple UI for Vim-dadbod. Allows for navigation through databases and saving
+queries.
+
+**Usage:**  
+`:DBUI`
+
 
 ---
 ## Language Server
