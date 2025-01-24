@@ -192,6 +192,9 @@ e.g. in Python:
 
 
 `:TodoTelescope` - search project todos with Telescope  
+`<leader>ts` will enter `:TodoTelescope cwd=` into the nvim command line. Can
+leave blank for default functionality, or enter a directory to restrict the
+search to.
 
 ---
 #### [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
