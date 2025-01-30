@@ -22,6 +22,7 @@ Plugins are managed using [lazy.nvim](https://github.com/folke/lazy.nvim)
  - [Markdown Preview](#markdown-preview)
  - [NVIM Web Devicons](#nvim-web-devicons)
  - [Oil](#oil)
+ - [Refactoring](#refactoring)
  - [SUDA](#suda)
  - [Surround](#surround)
  - [Telescope](#telescope)
@@ -120,6 +121,20 @@ Provides Nerd font icons for other plugins to use
 ---
 #### [Oil](https://github.com/stevearc/oil.nvim)
 Edit/view your filesystem like a normal NeoVim buffer
+
+---
+#### [Refactoring](https://github.com/ThePrimeagen/refactoring.nvim)
+Quickly refactor variables and functions
+
+| Keybind | Functionality | Mode |
+|---------|---------------|------|
+| `<leader>re` | Extract selection to new function | Visual, Select |
+| `<leader>rf` | Extract selection to new file | Visual, Select |
+| `<leader>rv` | Extract selection to new variable | Visual, Select |
+| `<leader>ri` | Inline variation | Normal, Visual, Select |
+| `<leader>rI` | Inline function | Normal |
+| `<leader>rb` | Extract current block | Normal |
+| `<leader>rbf` | Extract current block to file | Normal |
 
 ---
 #### [SUDA](https://github.com/lambdalisue/vim-suda)
@@ -260,6 +275,13 @@ LSP has been setup with the following dependencies:
  - html
  - jsonls
  - pyright
+ - ts_ls
+
+ LuaSnip has been configured with the following dependencies:
+ - rafamadriz/friendly-snippets
+ - benfowler/telescope-luasnip.nvim
+
+Run `:Telescope luasnip` to search the loaded snippets
 
 | Keybind | Functionality | Mode |
 |---------|---------------|------|
@@ -267,6 +289,7 @@ LSP has been setup with the following dependencies:
 | `Ctrl + n` | auto-complete select next item | Normal |
 | `Ctrl + y` | auto-complete confirm selected item | Normal |
 | `Ctrl + space` | invoke auto-complete | Normal |
+| `Enter` | Confirm the selected auto-complete/snippet (excluding preselect), otherwise CR | Normal |
 | `gd` | jumps to the definition of the symbol under the cursor | Normal |
 | `K` | displays hover information about the symbol under the cursor | Normal |
 | `<leader>vws` | lists all symbols in the current workspace matching {query} | Normal |
