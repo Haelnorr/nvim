@@ -3,29 +3,48 @@ require("haelnorr.remap")
 require("haelnorr.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
-local HaelnorrGroup = augroup('Haelnorr', {})
+local HaelnorrGroup = augroup("Haelnorr", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
 function R(name)
-    require("plenary.reload").reload_module(name)
+	require("plenary.reload").reload_module(name)
 end
 
-autocmd('LspAttach', {
-    group = HaelnorrGroup,
-    callback = function(e)
-        local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    end
+autocmd("LspAttach", {
+	group = HaelnorrGroup,
+	callback = function(e)
+		vim.keymap.set("n", "gd", function()
+			vim.lsp.buf.definition()
+		end, { buffer = e.buf, desc = "Goto definition" })
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover()
+		end, { buffer = e.buf, desc = "Display hover" })
+		vim.keymap.set("n", "<leader>vs", function()
+			vim.lsp.buf.workspace_symbol()
+		end, { buffer = e.buf, desc = "Find symbol in workspace" })
+		vim.keymap.set("n", "<leader>vf", function()
+			vim.diagnostic.open_float()
+		end, { buffer = e.buf, desc = "Show diagnostics" })
+		vim.keymap.set("n", "<leader>va", function()
+			vim.lsp.buf.code_action()
+		end, { buffer = e.buf, desc = "Code action" })
+		vim.keymap.set("n", "<leader>vs", function()
+			vim.lsp.buf.references()
+		end, { buffer = e.buf, desc = "List references to symbol" })
+		vim.keymap.set("n", "<leader>vr", function()
+			vim.lsp.buf.rename()
+		end, { buffer = e.buf, desc = "Rename symbol" })
+		vim.keymap.set("i", "<C-h>", function()
+			vim.lsp.buf.signature_help()
+		end, { buffer = e.buf, desc = "Display signature" })
+		vim.keymap.set("n", "[d", function()
+			vim.diagnostic.goto_next()
+		end, { buffer = e.buf, desc = "Next diagnostic" })
+		vim.keymap.set("n", "]d", function()
+			vim.diagnostic.goto_prev()
+		end, { buffer = e.buf, desc = "Prev diagnostic" })
+	end,
 })
 
 vim.g.netrw_browse_split = 0

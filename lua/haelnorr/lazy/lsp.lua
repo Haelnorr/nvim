@@ -20,6 +20,7 @@ return {
 				end
 				vim.tbl_map(function(type)
 					require("luasnip.loaders.from_" .. type).lazy_load()
+					vim.keymap.set("n", "<leader>ts", "<cmd>Telescope luasnip<CR>", { desc = "Search Snippets" })
 				end, { "vscode", "snipmate", "lua" })
 			end,
 		},

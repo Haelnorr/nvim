@@ -170,8 +170,8 @@ Extensible fuzzy finder for NeoVim
 |---------|---------------|------|
 | `<leader>pf` | Find files | Normal |
 | `Ctrl + p` | Find git files | Normal |
-| `<leader>pws` | Search files for `<cword>` (word the cursor is on) | Normal |
-| `<leader>pWs` | Search files for `<cWORD>` (WORD the cursor is on) | Normal |
+| `<leader>pw` | Search files for `<cword>` (word the cursor is on) | Normal |
+| `<leader>pW` | Search files for `<cWORD>` (WORD the cursor is on) | Normal |
 | `<leader>ps` | Search files with grep | Normal |
 | `<leader>vh` | Search builtin documentation | Normal |
 
