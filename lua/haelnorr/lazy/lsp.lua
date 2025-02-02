@@ -48,6 +48,7 @@ return {
 				"cssmodules_ls",
 				"docker_compose_language_service",
 				"dockerls",
+				"gopls",
 				"html",
 				"jsonls",
 				"pyright",
@@ -80,6 +81,7 @@ return {
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 		cmp.setup({
+			preselect = cmp.PreselectMode.None,
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
@@ -101,6 +103,14 @@ return {
 					s = cmp.mapping.confirm({ select = true }),
 					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 				}),
+				["<Tab>"] = function(fallback)
+					local ls = require("luasnip")
+					if ls.expand_or_jumpable() then
+						ls.expand_or_jump()
+					else
+						fallback()
+					end
+				end,
 			}),
 			sources = cmp.config.sources({
 				{ name = "luasnip" }, -- For luasnip users.
