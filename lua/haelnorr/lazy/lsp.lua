@@ -8,22 +8,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
-		{
-			"L3MON4D3/LuaSnip",
-			dependencies = {
-				"rafamadriz/friendly-snippets",
-				"benfowler/telescope-luasnip.nvim",
-			},
-			config = function(_, opts)
-				if opts then
-					require("luasnip").config.setup(opts)
-				end
-				vim.tbl_map(function(type)
-					require("luasnip.loaders.from_" .. type).lazy_load()
-					vim.keymap.set("n", "<leader>ts", "<cmd>Telescope luasnip<CR>", { desc = "Search Snippets" })
-				end, { "vscode", "snipmate", "lua" })
-			end,
-		},
+		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 	},
@@ -103,14 +88,6 @@ return {
 					s = cmp.mapping.confirm({ select = true }),
 					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 				}),
-				["<Tab>"] = function(fallback)
-					local ls = require("luasnip")
-					if ls.expand_or_jumpable() then
-						ls.expand_or_jump()
-					else
-						fallback()
-					end
-				end,
 			}),
 			sources = cmp.config.sources({
 				{ name = "luasnip" }, -- For luasnip users.

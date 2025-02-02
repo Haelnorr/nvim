@@ -8,6 +8,7 @@ return {
 	opts = {
 		-- Define your formatters
 		formatters_by_ft = {
+			go = { "gofmt" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
