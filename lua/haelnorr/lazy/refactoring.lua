@@ -6,7 +6,7 @@ return {
 	},
 	lazy = false,
 	config = function()
-		require("refactoring").setup()
+		require("refactoring").setup({})
 		vim.keymap.set("x", "<leader>re", ":Refactor extract ", { desc = "Extract selection" })
 		vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ", { desc = "Extract selection to new file" })
 

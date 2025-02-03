@@ -22,7 +22,13 @@ return {
 
 			{ "<leader><leader>", group = "Reload Plugins", icon = { icon = "" } },
 			{ "<leader><leader>w", "<cmd>Lazy reload which-key.nvim<CR>", desc = "Reload Which-key" },
-			{ "<leader><leader>s", "<cmd>Lazy reload LuaSnip<CR>", desc = "Reload LuaSnip" },
+			{
+				"<leader><leader>s",
+				"<cmd>source ~/.config/nvim/lua/haelnorr/snippets/lua.lua<CR>\
+				<cmd>source ~/.config/nvim/lua/haelnorr/snippets/go.lua<CR>\
+                <cmd>Lazy reload LuaSnip<CR>",
+				desc = "Reload LuaSnip",
+			},
 			{ "<leader><leader>l", "<cmd>Lazy reload nvim-lspconfig<CR>", desc = "Reload LSP" },
 
 			-- Harpoon
