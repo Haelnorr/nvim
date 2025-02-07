@@ -18,7 +18,6 @@ return {
 			{ "<leader>o", group = "Open plugin", icon = { icon = "", color = "yellow" } },
 			{ "<leader>r", group = "Refactoring", mode = { "n", "x" } },
 			{ "<leader>v", group = "LSP Actions", icon = { icon = "󰅡" } },
-			{ "<leader>l", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
 
 			{ "<leader><leader>", group = "Reload Plugins", icon = { icon = "" } },
 			{ "<leader><leader>w", "<cmd>Lazy reload which-key.nvim<CR>", desc = "Reload Which-key" },
@@ -26,10 +25,12 @@ return {
 				"<leader><leader>s",
 				"<cmd>source ~/.config/nvim/lua/haelnorr/snippets/lua.lua<CR>\
 				<cmd>source ~/.config/nvim/lua/haelnorr/snippets/go.lua<CR>\
+				<cmd>source ~/.config/nvim/lua/haelnorr/snippets/templ.lua<CR>\
                 <cmd>Lazy reload LuaSnip<CR>",
 				desc = "Reload LuaSnip",
 			},
-			{ "<leader><leader>l", "<cmd>Lazy reload nvim-lspconfig<CR>", desc = "Reload LSP" },
+			{ "<leader><leader>l", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
+			{ "<leader><leader>c", "<cmd>Lazy reload conform.nvim<CR>", desc = "Reload Conform" },
 
 			-- Harpoon
 			-- Quick jumps and show list

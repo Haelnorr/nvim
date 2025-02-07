@@ -146,4 +146,22 @@ if <err_same> != nil {
 			}
 		)
 	),
+	s(
+		"rh",
+		fmta(
+			[[
+func Handle<name>() http.Handler {
+    return http.HandlerFunc(
+        func(w http.ResponseWriter, r *http.Request) {
+            <action>
+        },
+    )
+}
+]],
+			{
+				name = i(1),
+				action = i(2),
+			}
+		)
+	),
 })

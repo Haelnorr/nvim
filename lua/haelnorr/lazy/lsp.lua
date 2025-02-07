@@ -31,6 +31,7 @@ return {
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
+
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -40,13 +41,14 @@ return {
 				"bashls",
 				"css_variables",
 				"cssls",
-				"cssmodules_ls",
 				"docker_compose_language_service",
 				"dockerls",
 				"gopls",
 				"html",
 				"jsonls",
 				"pyright",
+				"tailwindcss",
+				"templ",
 				"ts_ls",
 			},
 			handlers = {
@@ -68,6 +70,26 @@ return {
 								},
 							},
 						},
+					})
+				end,
+
+				["templ"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.templ.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["html"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.html.setup({
+						capabilities = capabilities,
+					})
+				end,
+				["tailwindcss"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.tailwindcss.setup({
+						capabilities = capabilities,
 					})
 				end,
 			},
