@@ -80,7 +80,7 @@ local handlers = {
 		return result
 	end,
 
-	type_indentifier = function(node, info)
+	type_identifier = function(node, info)
 		local text = vim.treesitter.get_node_text(node, 0)
 		return { transform(text, info) }
 	end,
