@@ -11,8 +11,13 @@ return {
 			view_options = {
 				show_hidden = true,
 				is_always_hidden = function(name, bufnr)
-					local m = name:match("^%.%.")
-					return m ~= nil
+					if name:match("^%.%.") then
+						return true
+					end
+					if name:match("_templ%.go$") or name:match("_templ%.txt$") then
+						return true
+					end
+					return false
 				end,
 			},
 		})
