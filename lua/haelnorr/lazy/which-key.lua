@@ -17,7 +17,8 @@ return {
 			{ "<leader>t", group = "Telescope" },
 			{ "<leader>o", group = "Open plugin", icon = { icon = "", color = "yellow" } },
 			{ "<leader>r", group = "Refactoring", mode = { "n", "x" } },
-			{ "<leader>v", group = "LSP Actions", icon = { icon = "󰅡" } },
+			{ "<leader>l", group = "LSP Actions", icon = { icon = "󰅡" } },
+			{ "<leader>v", group = "Diffview", icon = { icon = "" } },
 
 			{ "<leader><leader>", group = "Reload Plugins", icon = { icon = "" } },
 			{ "<leader><leader>w", "<cmd>Lazy reload which-key.nvim<CR>", desc = "Reload Which-key" },
