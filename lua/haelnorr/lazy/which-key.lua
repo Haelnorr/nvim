@@ -32,6 +32,7 @@ return {
 			{ "<leader><leader>l", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
 			{ "<leader><leader>c", "<cmd>Lazy reload conform.nvim<CR>", desc = "Reload Conform" },
 			{ "<leader><leader>o", "<cmd>Lazy reload oil.nvim<CR>", desc = "Reload Oil" },
+			{ "<leader><leader>b", "<cmd>Lazy reload bufferline.nvim<CR>", desc = "Reload Bufferline" },
 
 			-- Harpoon
 			-- Quick jumps and show list

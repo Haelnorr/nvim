@@ -15,6 +15,8 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Quickfix next" })
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Quickfix prev" })
 
+vim.keymap.set("n", "<leader>q", "<cmd>bw<CR>", { desc = "Close file" })
+
 vim.keymap.set(
 	"n",
 	"<leader>s",

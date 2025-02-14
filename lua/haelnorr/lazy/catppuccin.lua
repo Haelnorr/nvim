@@ -30,10 +30,12 @@ return {
 						background = true,
 					},
 				},
+				nvim_surround = true,
 				telescope = {
 					enabled = true,
 				},
 				treesitter = true,
+				which_key = true,
 			},
 		})
 		vim.cmd("colorscheme catppuccin-mocha")
