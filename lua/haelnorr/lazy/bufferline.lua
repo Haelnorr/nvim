@@ -11,8 +11,11 @@ return {
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
 		bufferline.setup({
 			options = {
-				always_show_bufferline = false,
-				auto_toggle_bufferline = true,
+				always_show_bufferline = true,
+				numbers = function(opts)
+					return opts.raise(opts.ordinal)
+				end,
+				show_buffer_icons = false,
 			},
 			highlights = require("catppuccin.groups.integrations.bufferline").get({
 				styles = { "italic", "bold" },
