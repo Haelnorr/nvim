@@ -3,6 +3,7 @@ local ls = require("luasnip")
 local s = ls.snippet
 local c = ls.choice_node
 local d = ls.dynamic_node
+local f = ls.function_node
 local i = ls.insert_node
 local t = ls.text_node
 local sn = ls.snippet_node
@@ -124,6 +125,10 @@ local go_return_values = function(args)
 	)
 end
 
+local camel_to_snake = function(str)
+	return str:gsub("([a-z])([A-Z])", "%1_%2"):lower()
+end
+
 ls.add_snippets("go", {
 	s(
 		"efi",
@@ -161,6 +166,21 @@ func Handle<name>() http.Handler {
 			{
 				name = i(1),
 				action = i(2),
+			}
+		)
+	),
+	s(
+		"jf",
+		fmta(
+			[[
+<field> <type> `json:"<key>"`
+    ]],
+			{
+				field = i(1, "Field"),
+				type = i(2, "type"),
+				key = f(function(args)
+					return camel_to_snake(args[1][1])
+				end, { 1 }),
 			}
 		)
 	),
