@@ -7,6 +7,6 @@ return {
 	opts = {},
 	config = function()
 		require("todo-comments").setup()
-		vim.keymap.set("n", "<leader>tt", ":TodoTelescope cwd=", { desc = "Search Todos" })
+		vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Search Todos" })
 	end,
 }

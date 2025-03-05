@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>bw<CR>", { desc = "Close file" })
 vim.keymap.set(
 	"n",
 	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]],
 	{ desc = "Find and replace word" }
 )
 
