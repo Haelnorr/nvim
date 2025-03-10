@@ -16,7 +16,7 @@ ls.add_snippets("templ", {
 			[[
 package page
 
-import "projectreshoot/view/layout"
+import "{}/internal/view/layout"
 
 templ {}() {{
 	@layout.Global() {{
@@ -27,7 +27,8 @@ templ {}() {{
 }}
     ]],
 			{
-				i(1, "Page"),
+				i(1, "project"),
+				i(2, "Page"),
 				i(0),
 			}
 		)
