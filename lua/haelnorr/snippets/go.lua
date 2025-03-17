@@ -20,8 +20,8 @@ local default_values = {
 			info.index = info.index + 1
 
 			return c(info.index, {
-				t(info.err_name),
 				t(string.format('errors.Wrap(%s, "%s")', info.err_name, info.func_name)),
+				t(info.err_name),
 			})
 		else
 			return t("err")
@@ -39,7 +39,7 @@ local default_values = {
 	end] = function(text, info)
 		info.index = info.index + 1
 		return c(info.index, {
-			t(text .. "{}"),
+			t("nil"),
 			t(text),
 		})
 	end,
@@ -178,9 +178,14 @@ func Handle<name>() http.Handler {
 			{
 				field = i(1, "Field"),
 				type = i(2, "type"),
-				key = f(function(args)
-					return camel_to_snake(args[1][1])
-				end, { 1 }),
+				key = c(3, {
+					f(function(args)
+						return camel_to_snake(args[1][1])
+					end, { 1 }),
+					f(function(args)
+						return args[1][1]:lower()
+					end, { 1 }),
+				}),
 			}
 		)
 	),
